@@ -3,12 +3,12 @@
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-311/)
 [![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
 
-## 📌 Overview
+##  Overview
 This project applies Classical Machine Learning, Deep Learning, and Explainable AI (XAI) to classify Higgs Boson signal events from background noise. Using the ATLAS Higgs Boson dataset, multiple architectures are evaluated to maximize classification accuracy. Furthermore, SHAP and LIME are utilized to extract the most critical physical variables, establishing a streamlined feature set for ongoing research into **Quantum Machine Learning (QML)** applications in high-energy physics.
 
 ---
 
-## 📊 Dataset & Preprocessing
+## Dataset & Preprocessing
 
 **Source:** [ATLAS Higgs Boson Machine Learning Challenge](https://www.kaggle.com/c/higgs-boson/data)
 * **Samples:** ~818,000 | **Features:** 30 | **Class Imbalance:** 65.8% Background / 34.2% Signal
@@ -18,14 +18,14 @@ This project applies Classical Machine Learning, Deep Learning, and Explainable 
 
 ---
 
-## ⚙️ Modeling Pipeline
+##  Modeling Pipeline
 
 We trained and evaluated a diverse suite of tabular models to establish a robust baseline:
 * **Classical Ensembles:** Random Forest, XGBoost, LightGBM
 * **Deep Learning:** Multi-Layer Perceptron (MLP), TabNet, TabTransformer
 * **Baseline:** Logistic Regression
 
-### 🏆 Final Model Performance (Test Set)
+###  Model Performance (Test Set)
 **LightGBM** and **XGBoost** achieved state-of-the-art performance. The tuned **XGBoost** model was selected for the final XAI pipeline due to its balance of high ROC-AUC and interpretability.
 
 | Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
@@ -39,8 +39,23 @@ We trained and evaluated a diverse suite of tabular models to establish a robust
 *(Note: The XGBoost model demonstrated excellent generalization, with a Validation ROC-AUC of 0.9151 and Test ROC-AUC of 0.9116).*
 
 ---
+### Final Model: Tuned XGBoost (Selected for XAI)
 
-## 🧠 Explainability (XAI)
+After evaluating multiple architectures, the **Tuned XGBoost** model was selected as the final baseline for the Explainable AI (XAI) pipeline and subsequent Quantum Machine Learning feature selection.
+
+#### Final Test Performance
+
+| Metric | Score |
+| :--- | :--- |
+| **Accuracy** | 0.8303 |
+| **Precision** | 0.7175 |
+| **Recall** | 0.8300 |
+| **F1 Score** | 0.7696 |
+| **ROC-AUC** | 0.9116 |
+
+---
+
+##  Explainability (XAI)
 To break the "black-box" nature of the final model, **SHAP** (global) and **LIME** (local) were utilized. Both frameworks independently verified the same physical mass reconstruction and kinematic variables as the primary drivers of prediction:
 
 **Top 5 Predictive Features:**
@@ -52,14 +67,14 @@ To break the "black-box" nature of the final model, **SHAP** (global) and **LIME
 
 ---
 
-## ⚛️ Ongoing Research: Quantum ML (QML)
+##  Ongoing Research: Quantum ML (QML)
 The classical ML pipeline serves as the foundation for the next phase of this project. Using the highly informative feature subsets identified by SHAP, current active research focuses on:
 * **Quantum Support Vector Machines (QSVM):** Evaluating quantum kernels on dimensionally-reduced feature spaces using `Qiskit`.
 * **Variational Quantum Classifiers (VQC):** Benchmarking parameterized quantum circuits against classical baselines.
 
 ---
 
-## 💻 Tech Stack
+##  Tech Stack
 * **Core:** `Python`, `NumPy`, `Pandas`
 * **Modeling:** `Scikit-Learn`, `XGBoost`, `LightGBM`, `PyTorch`, `TabNet`
 * **Explainability:** `SHAP`, `LIME`
@@ -67,7 +82,7 @@ The classical ML pipeline serves as the foundation for the next phase of this pr
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```text
 Higgs_Boson_Project/
