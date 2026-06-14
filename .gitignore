@@ -19,9 +19,10 @@ predictions/
 models/
 models/
 # incomplete notebooks
-notebooks/15_qsvm.ipynb/
-notebooks/test.ipynb/
-notebooks/11_tuned_xgb.ipynb/
+notebooks/11-1model_testing.ipynb
+notebooks/15_qsvm.ipynb
+notebooks/test.ipynb
+notebooks/11_tuned_xgboost.ipynb
 # Distribution / packaging
 .Python
 build/
