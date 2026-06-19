@@ -50,7 +50,7 @@ def _prepare_base_data():
         random_state=42
     )
 
-    # Median imputation using TRAIN statistics only
+    # Median imputation calculated strictly on X_train to prevent data leakage
     median_values = X_train.median()
     
     X_train = X_train.fillna(median_values)
