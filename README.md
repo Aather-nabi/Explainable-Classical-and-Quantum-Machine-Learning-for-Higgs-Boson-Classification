@@ -1,4 +1,4 @@
-# Explainable Classical and Quantum Machine Learning for Higgs Boson Classification
+# Explainable Machine Learning for Higgs Boson Classification
 
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-311/)
 [![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
